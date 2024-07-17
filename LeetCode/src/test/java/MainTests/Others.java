@@ -1,5 +1,9 @@
 package MainTests;
 
+import java.util.Arrays;
+
+import Constructors.ListNode;
+
 public class Others {
 	
 	public String setArray(int[][] array) {
@@ -31,4 +35,32 @@ public class Others {
 		sb.append("}");
 		return sb.toString();
 	}
+	
+	public ListNode setArrayTolist(int[] arr) {
+		return this.arrayToListNode(arr);
+	}
+	
+	public int[] setListNodeToArray(ListNode node) {
+		return this.listNodeToArray(node);
+	}
+	
+    private ListNode arrayToListNode(int[] arr) {
+        ListNode dummy = new ListNode(0);
+        ListNode current = dummy;
+        for (int num : arr) {
+            current.next = new ListNode(num);
+            current = current.next;
+        }
+        return dummy.next;
+    }
+
+    private int[] listNodeToArray(ListNode node) {
+        int[] result = new int[100];
+        int index = 0;
+        while (node != null) {
+            result[index++] = node.val;
+            node = node.next;
+        }
+        return Arrays.copyOf(result, index);
+    }
 }

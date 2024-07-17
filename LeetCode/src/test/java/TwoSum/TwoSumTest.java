@@ -16,7 +16,7 @@ class TwoSumTest {
 	Object a, b;
 
 	@BeforeEach
-	void setup() {
+	void setup() throws Exception {
 		ts = new MainTests();
 		aa = new TwoSum();
 	}

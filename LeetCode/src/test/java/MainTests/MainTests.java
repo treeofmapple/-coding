@@ -3,6 +3,8 @@ package MainTests;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.testng.Assert.assertEquals;
 
+import Constructors.ListNode;
+
 public class MainTests {
 	
 	private static Others othz;
@@ -26,10 +28,6 @@ public class MainTests {
 		runTest(() -> assertEquals(expected, result), expected, result, testName);
 	}
 	
-	public void runTestEquals(String expected, String result, String testName) {
-		runTest(() -> assertEquals(expected, result), expected, result, testName);
-	}
-	
 	public void runTestEquals(int[] expected, int[] result, String testName) {
 		runTest(() -> assertArrayEquals(expected, result), java.util.Arrays.toString(expected), java.util.Arrays.toString(result), testName);
 	}
@@ -38,7 +36,15 @@ public class MainTests {
 		runTest(() -> assertArrayEquals(expected, result), othz.setArray(expected), othz.setArray(result), testName);
 	}
 	
+	public void runTestEquals(String expected, String result, String testName) {
+		runTest(() -> assertEquals(expected, result), expected, result, testName);
+	}
+	
     public void runTestEquals(String[] expected, String[] result, String testName) {
+    	runTest(() -> assertArrayEquals(expected, result), java.util.Arrays.toString(expected), java.util.Arrays.toString(result), testName);
+    }
+    
+    public void runTestEquals(String[][] expected, String[][] result, String testName) {
     	runTest(() -> assertArrayEquals(expected, result), java.util.Arrays.toString(expected), java.util.Arrays.toString(result), testName);
     }
     
@@ -49,7 +55,11 @@ public class MainTests {
     public void runTestEquals(Object expected, Object result, String testName) {
     	runTest(() -> assertEquals(expected, result), expected, result, testName);
     }
-	
+    
+    public void runTestEquals(ListNode expected, ListNode result, String testName) {
+    	runTest(() -> assertEquals(expected, result), expected, result, testName);
+    }
+    
 	private String getCurrentMethodName() {
 		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 		return stackTrace[4].getMethodName();
