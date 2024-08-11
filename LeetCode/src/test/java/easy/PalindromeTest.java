@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import TestUtils.TesterRunner;
+import testutils.TesterRunner;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class PalindromeTest extends TesterRunner {

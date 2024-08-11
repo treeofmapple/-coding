@@ -1,12 +1,13 @@
-package TestUtils;
+package functions;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import constructors.ListNode;
 
 public class Others {
 
-	public String setArray(int[][] array) {
+	public <T> String setArray(T[][] array) {
 		return this.printArray(array);
 	}
 
@@ -18,7 +19,7 @@ public class Others {
 		return this.listNodeToArray(node);
 	}
 
-	private String printArray(int[][] array) {
+	private <T> String printArray(T[][] array) {
 		if (array == null) {
 			return "null";
 		}
@@ -55,12 +56,11 @@ public class Others {
 	}
 
 	private int[] listNodeToArray(ListNode node) {
-		int[] result = new int[100];
-		int index = 0;
-		while (node != null) {
-			result[index++] = node.val;
-			node = node.next;
-		}
-		return Arrays.copyOf(result, index);
+	    List<Integer> resultList = new ArrayList<>();
+	    while (node != null) {
+	        resultList.add(node.val);
+	        node = node.next;
+	    }
+	    return resultList.stream().mapToInt(Integer::intValue).toArray();
 	}
 }

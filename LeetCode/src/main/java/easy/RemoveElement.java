@@ -4,7 +4,7 @@ public class RemoveElement {
     public int removeElement(int[] nums, int val) {
     	int k = 0;
     	for (int num:nums) {
-    		if(num!= val) {
+    		if(num != val) {
     			nums[k]=num;
     			k++;
     		}

@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import TestUtils.Others;
-import TestUtils.TesterRunner;
 import constructors.ListNode;
+import functions.Others;
+import testutils.TesterRunner;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class MergeTwoListsTest extends TesterRunner {

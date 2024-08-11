@@ -9,31 +9,30 @@ import org.junit.jupiter.api.TestMethodOrder;
 import testutils.TesterRunner;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class RemoveElementTest extends TesterRunner {
+class RemoveDuplicatesTest extends TesterRunner {
 
-	private RemoveElement ab;
-		
+	private RemoveDuplicates ab;
+
 	@BeforeEach
 	void setUp() throws Exception {
-		ab = new RemoveElement();
+		ab = new RemoveDuplicates();
 	}
 
 	@Test
-	@Order(1)	
-	void RemoveTestCase1() {
-		int a[] = {3,2,2,3}, b = 3;
+	@Order(1)
+	void RemoveDuplicatesTestCase1() {
+		int a[] = {1,1,2};
 		int expected = 2;
-		int result = ab.removeElement(a, b);
+		int result = ab.removeDuplicates(a);
 		runTestEquals(expected, result);
 	}
 
 	@Test
 	@Order(2)
-	void RemoveTestCase2() {
-		int a[] = {0,1,2,2,3,0,4,2}, b = 2;
+	void RemoveDuplicatesTestCase2() {
+		int a[] = {0,0,1,1,1,2,2,3,3,4};
 		int expected = 5;
-		int result = ab.removeElement(a, b);
+		int result = ab.removeDuplicates(a);
 		runTestEquals(expected, result);
 	}
-
 }
