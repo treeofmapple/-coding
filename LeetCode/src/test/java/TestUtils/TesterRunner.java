@@ -113,12 +113,12 @@ public abstract class TesterRunner {
         EqualsTest(() -> assertEquals(expected, actual), expected, actual);
     }
     
-    public <T> void runTestEquals(T[] expected, T[] actual) {
-        EqualsTest(() -> assertArrayEquals(expected, actual), java.util.Arrays.toString(expected), java.util.Arrays.toString(actual));
-    }
+	public void runTestEquals(int[] expected, int[] actual) {
+	    EqualsTest(() -> assertArrayEquals(expected, actual), Arrays.toString(expected), Arrays.toString(actual));
+	}
 
     public <T> void runTestEquals(T[][] expected, T[][] actual) {
-        EqualsTest(() -> assertArrayEquals(expected, actual), othz.setArray(expected), othz.setArray(actual));
+        EqualsTest(() -> assertArrayEquals(expected, actual), Arrays.deepToString(expected), Arrays.deepToString(actual));
     }
     
     @API(status = STABLE, since = "r1.0")
@@ -143,7 +143,10 @@ public abstract class TesterRunner {
     }
     
     private <T> void checkNotEqualValues(T expected, T actual) {
-        if (expected == actual) {
+        if (expected == null && actual == null) {
+            throw new AssertionError("Both values are null!");
+        }
+        if (expected != null && expected.equals(actual)) {
             throw new AssertionError("Values are equal!");
         }
     }

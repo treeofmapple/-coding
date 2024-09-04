@@ -1,7 +1,5 @@
 package easy;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
