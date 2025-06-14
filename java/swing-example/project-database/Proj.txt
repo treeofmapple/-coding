@@ -1,0 +1,88 @@
+melhore o codigo criando uma função de acesso que limite o acesso dos
+usuarios referente a sua posição:
+
+Por exemplo position, ter 4 tipos de posições 
+
+Delegado
+Escrivão
+Investigador
+Perito Criminal
+
+Delegado é o unico que pode controlar as funções Gerenciar policiais e
+adicionar policiais alem de ter acesso as outras funções 
+Gerenciar criminosos e adicionar criminosos
+
+Escrivão e investigador pode apenas controlar adicionar criminosos e gerenciar
+criminosos.
+
+E Perito criminal pode apenas controlar gerenciar criminosos.
+
+
+Crie outra função: 
+Caso a due do usuário tenha sido paga, a função retorne Pago
+
+Crie outra função 
+
+Para que quando set_Arrest for false e ter uma arrest_time Date.
+Faça com que set_arrested seja true
+
+
+Faça com que access_date independente do usuario ser admin ou policeOfficer
+esteja junto com um username
+
+username e do lado um access_date toda vez que for chamado um SELECT 
+
+E melhore o codigo para que fique mais organizado e compreensivel.
+Obrigado
+
+CREATE TABLE IF NOT EXISTS admin (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(18) NOT NULL,
+    password VARCHAR(255) NOT NULL, 
+    access_date DATE
+);
+
+CREATE TABLE IF NOT EXISTS policeOfficer (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(18) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    position VARCHAR(100) NOT NULL,
+    gender CHAR(1) CHECK (gender IN ('M', 'F')),
+    time_worked INT DEFAULT 0, 
+    people_arrested INT DEFAULT 0, 
+    started_time DATE,
+    active BOOLEAN, 
+    access_date DATE
+);
+
+CREATE TABLE IF NOT EXISTS criminal (
+    criminalId SERIAL PRIMARY KEY,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    gender CHAR(1) CHECK (gender IN ('M', 'F')),
+    image VARCHAR(255),
+    arrest_time DATE,
+    due VARCHAR(25),
+    arrested BOOLEAN DEFAUTL FALSE
+    set_Arrest BOOLEAN DEFAULT FALSE
+);
+
+
+INSERT INTO admin (username, password) VALUES ('admin', 'admin123');
+
+INSERT INTO policeOfficer (username, password, position) VALUES ('Polska', 'vodkaLife', 'Detective');
+INSERT INTO policeOfficer (username, password, position) VALUES ('Admeir', 'vodkaLife', 'Deputy');
+
+SELECT * FROM admin;
+
+
+
+
+
+
+
+
+
+
+
+

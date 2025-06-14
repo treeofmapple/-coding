@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.tom.datastructure</groupId>
+	<artifactId>datastructure</artifactId>
+	<packaging>jar</packaging>
+
+	<version>ab1.0</version>
+	<name>data-structure</name>
+	<description></description>
+
+	<developers></developers>
+
+
+	<url></url>
+
+	<licenses>
+		<license>
+			<name>BSD 3-Clause License</name>
+			<url>https://opensource.org/licenses/BSD-3-Clause</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<java.version>21</java.version>
+		<junit.jupiter>5.10.2</junit.jupiter>
+		<junit.engine>5.8.1</junit.engine>
+		<junit.platform>1.8.1</junit.platform>
+		<testng>7.4.0</testng>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<!-- General-->
+
+
+		<!-- Test-->
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.engine}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>${junit.platform}</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+
+
+	<build>
+		<resources></resources>
+		<plugins></plugins>
+	</build>
+
+</project>
