@@ -1,0 +1,15 @@
+{
+  "name": "6_leapyears",
+  "version": "v1",
+  "main": "leap_years.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

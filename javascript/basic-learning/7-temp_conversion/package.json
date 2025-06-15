@@ -1,0 +1,15 @@
+{
+  "name": "7_tempconversion",
+  "version": "v1",
+  "main": "temp_conversion.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

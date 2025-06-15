@@ -1,0 +1,15 @@
+{
+  "name": "3_reversestring",
+  "main": "reverse_string.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Pogeku",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "version": "v1",
+  "description": ""
+}

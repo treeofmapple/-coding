@@ -1,0 +1,15 @@
+{
+  "name": "11_getthetitles",
+  "version": "v1",
+  "main": "get_titles.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
