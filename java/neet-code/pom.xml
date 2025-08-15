@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tekk.coding</groupId>
+	<artifactId>neet-code</artifactId>
+	<version>r1.311</version>
+	<name>Neet Code</name>
+	<description>Learning Neetcode normaly</description>
+
+	<licenses>
+		<license>
+			<name>BSD 3-Clause License</name>
+			<url>https://opensource.org/licenses/BSD-3-Clause</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<java.version>21</java.version>
+		<junit5>5.10.3</junit5>
+		<testng.tester>7.4.0</testng.tester>
+		<data.faker>2.4.2</data.faker>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- General-->
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<!-- Test-->
+		<!--
+		https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit5}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Data Random Generation -->
+		<!-- 
+		https://mvnrepository.com/artifact/net.datafaker/datafaker -->
+		<dependency>
+			<groupId>net.datafaker</groupId>
+			<artifactId>datafaker</artifactId>
+			<version>${data.faker}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<!-- Implementation of the SLF4J API for Logback, a reliable, generic,
+		fast and flexible logging framework. -->
+		<!-- 
+		https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.5.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- BDD Stories -->
+		<!-- JBehave Core contains all the core functionality for running BDD
+		stories. -->
+		<!-- 
+		https://mvnrepository.com/artifact/org.jbehave/jbehave-core -->
+		<dependency>
+			<groupId>org.jbehave</groupId>
+			<artifactId>jbehave-core</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+
+		<!-- Load Test -->
+		<!-- Apache JMeter Core -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.jmeter/ApacheJMeter_core -->
+		<dependency>
+			<groupId>org.apache.jmeter</groupId>
+			<artifactId>ApacheJMeter_core</artifactId>
+			<version>5.6.3</version>
+		</dependency>
+	</dependencies>
+
+</project>

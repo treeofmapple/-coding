@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Starter">
+      <UniqueIdentifier>{5aa7735d-d345-4c6a-a87f-4b82fe0eeda2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Intermediary">
+      <UniqueIdentifier>{dd281dd9-6848-48c2-a60b-e35a68fdca77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Advanced">
+      <UniqueIdentifier>{8873c132-27e5-41df-b197-ed257dd6caf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pointers">
+      <UniqueIdentifier>{338f0be1-85ab-424b-a0ee-653d4095eff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{a5e7738d-58ea-472f-9453-28e33b38e964}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VerifyAge.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="Average.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="BiggerThanTwo.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="CelsiusFahrenheit.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="CountToHundred.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="General.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="OneNumber.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="ParImpar.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadAndPrint.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="1-TwoSum.cpp">
+      <Filter>Source Files\Starter</Filter>
+    </ClCompile>
+    <ClCompile Include="whatIsNum.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="CousinNumber.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="Factorial.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="InvertNumber.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3x.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberSum.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintArray.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="vogalsString.cpp">
+      <Filter>Source Files\Intermediary</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>Source Files\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="StructPessoa.cpp">
+      <Filter>Source Files\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="ListTasks.cpp">
+      <Filter>Source Files\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="TextAnalyser.cpp">
+      <Filter>Source Files\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="Notepad.cpp">
+      <Filter>Source Files\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueSim.cpp">
+      <Filter>Source Files\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoVariables.cpp">
+      <Filter>Source Files\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorAlocation.cpp">
+      <Filter>Source Files\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
