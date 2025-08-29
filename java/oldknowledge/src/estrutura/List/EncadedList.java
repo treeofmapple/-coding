@@ -61,18 +61,6 @@ public class EncadedList {
 		}
 	}
 
-	private void findPrevious(int index) {
-		ListNode itr = head;
-		previous = null;
-		for (int i = 0; i < size; i++) {
-			if (i == index)
-				return;
-			previous = itr;
-			itr = itr.next;
-		}
-		return;
-	}
-
 	public void print() {
 		if (size == 0)
 			System.out.println("<----Lista Vazia---->");
@@ -184,6 +172,18 @@ public class EncadedList {
 		int[] indices = new int[count];
 		System.arraycopy(tempIndices, 0, indices, 0, count);
 		return indices;
+	}
+	
+	private void findPrevious(int index) {
+		ListNode itr = head;
+		previous = null;
+		for (int i = 0; i < size; i++) {
+			if (i == index)
+				return;
+			previous = itr;
+			itr = itr.next;
+		}
+		return;
 	}
 
 }
