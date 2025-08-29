@@ -44,6 +44,19 @@ public class ArrayLists {
 		return true;
 	}
 
+	public void add(int index, Object elem) {
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index=" + index + " e Size=" + size);
+		}
+		reziseCapacity();
+		for (int i = size; i > index; i--) {
+			elements[i] = elements[i - 1];
+			size++;
+		}
+		elements[size] = elem;
+		size++;
+	}
+
 	private void reziseCapacity() {
 		if (size == capacity) {
 			Object[] newElements = new Object[capacity *= 2];

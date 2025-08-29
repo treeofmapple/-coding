@@ -90,24 +90,23 @@ public class EncadedLists {
 	}
 
 	public void add(int index, Object elem) {
-		if (index < 0 || index > size)
+		if (index < 0 || index > size) {
 			throw new IndexOutOfBoundsException("Index=" + index + " e Size=" + size);
-		else {
-			if (index == 0) {
-				if (head == null) {
-					ListNode newElement = new ListNode(elem, null);
-					head = tail = newElement;
-				} else {
-					ListNode newElement = new ListNode(elem, head);
-					head = newElement;
-				}
+		}
+		if (index == 0) {
+			if (head == null) {
+				ListNode newElement = new ListNode(elem, null);
+				head = tail = newElement;
 			} else {
-				findPrevious(index);
-				ListNode newElement = new ListNode(elem, previous.next);
-				previous.next = newElement;
-				if (newElement.next == null)
-					tail = newElement;
+				ListNode newElement = new ListNode(elem, head);
+				head = newElement;
 			}
+		} else {
+			findPrevious(index);
+			ListNode newElement = new ListNode(elem, previous.next);
+			previous.next = newElement;
+			if (newElement.next == null)
+				tail = newElement;
 		}
 		size++;
 	}
@@ -122,24 +121,23 @@ public class EncadedLists {
 
 	public Object remove(int index) {
 		Object toBeDeleted;
-		if (index < 0 || index > size)
+		if (index < 0 || index > size) {
 			throw new IndexOutOfBoundsException("Index=" + index + " e Size=" + size);
-		else {
-			if (index == 0) {
-				toBeDeleted = head.element;
-				if (head == tail)
-					head = tail = null;
-				else
-					head = head.next;
-			} else {
-				findPrevious(index);
-				toBeDeleted = previous.next.element;
-				if (previous.next == tail)
-					tail = previous;
-				previous.next = previous.next.next;
-			}
-			size--;
 		}
+		if (index == 0) {
+			toBeDeleted = head.element;
+			if (head == tail)
+				head = tail = null;
+			else
+				head = head.next;
+		} else {
+			findPrevious(index);
+			toBeDeleted = previous.next.element;
+			if (previous.next == tail)
+				tail = previous;
+			previous.next = previous.next.next;
+		}
+		size--;
 		return toBeDeleted;
 	}
 
@@ -185,5 +183,5 @@ public class EncadedLists {
 		}
 		return;
 	}
-	
+
 }
