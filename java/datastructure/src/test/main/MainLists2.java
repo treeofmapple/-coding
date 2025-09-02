@@ -22,7 +22,6 @@ public class MainLists2 {
 		// insertData()
 		// removeData()
 		
-		
 		// indexOf(Object elem);
 		// get(int index);
 		// print();

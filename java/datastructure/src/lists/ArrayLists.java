@@ -26,17 +26,6 @@ public class ArrayLists {
 		return (size == 0);
 	}
 
-	public void print() {
-		if (size == 0)
-			System.out.println("<----Lista Vazia---->");
-		else {
-			System.out.println("<----Início---->");
-			for (int i = 0; i < size; i++)
-				System.out.print(elements[i] + (i == size - 1 ? "" : ", "));
-			System.out.println("\n<----Fim---->");
-		}
-	}
-
 	public boolean add(Object elem) {
 		reziseCapacity();
 		elements[size] = elem;
@@ -65,25 +54,60 @@ public class ArrayLists {
 			elements = newElements;
 		}
 	}
-	
-	int indexOf() {
-		return 0;
-	}
-	
-	Object get() {
-		return null;
-	}
-	
-	void clear() {
-		
+
+	public int indexOf(Object elem) {
+		for (int i = 0; i < size; i++) {
+			if (elem == null ? elements[i] == null : elem.equals(elements[i])) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
-	boolean remove(Object object) {
-		return false;
+	public Object get(int index) {
+		if (index < 0 || index > size - 1) {
+			throw new IndexOutOfBoundsException("Index=" + index + " e Size=" + size);
+		}
+		return elements[index];
 	}
-	
-	Object remove(int index) {
-		return null;
+
+	public void clear() {
+		size = 0;
+		capacity = 0;
+		elements = null;
 	}
-	
+
+	public boolean remove(Object object) {
+		int index = indexOf(object);
+		if (index < 0) {
+			return false;
+		}
+		remove(index);
+		return true;
+	}
+
+	public Object remove(int index) {
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index=" + index + " e Size=" + size);
+		}
+		Object removed = elements[index];
+		for (int i = index; i < size - 1; i++) {
+			elements[i] = elements[i + 1];
+		}
+		elements[size - 1] = null;
+		size--;
+		return removed;
+	}
+
+	public void print() {
+		if (size == 0)
+			System.out.println("<----Lista Vazia---->");
+		else {
+			System.out.println("<----Início---->");
+			for (int i = 0; i < size; i++)
+				System.out.print(elements[i] + (i == size - 1 ? "" : ", "));
+			System.out.println("\n<----Fim---->");
+		}
+	}
+
 }
