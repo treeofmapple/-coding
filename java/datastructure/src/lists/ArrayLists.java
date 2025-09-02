@@ -65,5 +65,25 @@ public class ArrayLists {
 			elements = newElements;
 		}
 	}
+	
+	int indexOf() {
+		return 0;
+	}
+	
+	Object get() {
+		return null;
+	}
+	
+	void clear() {
+		
+	}
 
+	boolean remove(Object object) {
+		return false;
+	}
+	
+	Object remove(int index) {
+		return null;
+	}
+	
 }

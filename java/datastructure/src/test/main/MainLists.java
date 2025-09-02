@@ -33,7 +33,7 @@ public class MainLists {
 
 	private static void EncadedList() {
 		EncadedLists a,b,c,d;
-		int[] mac = {1,2,3,4,5,6};
+		int[] mac = { 1, 2, 3, 4, 5, 6 };
 		Object[] al = {"a","b","c","d","e","f",
 				       "g","h","i","j","k","l",
 				       "m","n","o","p","q","r",

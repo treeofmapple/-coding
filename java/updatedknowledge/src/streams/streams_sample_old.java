@@ -1,4 +1,4 @@
-package unsued;
+package streams;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-class streams_sample {
+class streams_sample_old {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Anna", "Ben");
 
