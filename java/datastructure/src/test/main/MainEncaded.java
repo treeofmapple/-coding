@@ -11,7 +11,7 @@ public class MainEncaded {
 		b = new EncadedLists();
 		c = new EncadedLists();
 		d = new EncadedLists();
-		
+
 		numberInserter(10, a);
 		numberInserter(20, b);
 		numberInserter(40, c);
@@ -30,8 +30,11 @@ public class MainEncaded {
 		b.print();
 		c.print();
 		d.print();
+		d.remove(4);
 		System.out.println("\n");
 		
+		System.out.println(a.get(1));
+		d.print();
 	}
 	
 	private static void numberInserter(int a, EncadedLists b) {

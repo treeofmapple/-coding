@@ -126,10 +126,11 @@ public class EncadedLists {
 		}
 		if (index == 0) {
 			toBeDeleted = head.element;
-			if (head == tail)
+			if (head == tail) {
 				head = tail = null;
-			else
+			} else {
 				head = head.next;
+			}
 		} else {
 			findPrevious(index);
 			toBeDeleted = previous.next.element;
