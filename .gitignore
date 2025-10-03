@@ -108,3 +108,5 @@
 *.class
 **/pom.properties
 
+**/bin/
+**bin/

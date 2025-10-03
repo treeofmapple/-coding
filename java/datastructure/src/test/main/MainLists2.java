@@ -2,6 +2,7 @@ package test.main;
 
 import lists.ArrayLists;
 
+@SuppressWarnings("unused")
 public class MainLists2 {
 
 	public static void main(String[] args) {
