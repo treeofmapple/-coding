@@ -2,8 +2,8 @@ package boxes;
 
 import java.util.Random;
 
-
 public class MultiBoxAluno {
+
 	private Aluno[] elements;
 	private int capacity;
 	private int size;

@@ -49,7 +49,7 @@ public class BinaryBalancedTree {
 		} else if (compareResult > 0) {
 			return find(x, t.right);
 		} else {
-			return t.element; 
+			return t.element;
 		}
 	}
 
@@ -118,7 +118,7 @@ public class BinaryBalancedTree {
 
 	private AvlNode remove(Comparable x, AvlNode t) {
 		if (t == null) {
-			return t; 
+			return t;
 		}
 
 		@SuppressWarnings("unchecked")

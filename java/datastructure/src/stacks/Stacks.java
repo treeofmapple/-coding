@@ -29,14 +29,16 @@ public class Stacks {
 	}
 
 	public void pop() {
-		if (empty())
+		if (empty()) {
 			throw new EmptyStackException();
+		}
 		topOfStack = topOfStack.next;
 	}
 
 	public Object peek() {
-		if (empty())
+		if (empty()) {
 			throw new EmptyStackException();
+		}
 		return topOfStack.element;
 
 	}
