@@ -1,5 +1,6 @@
 package deque;
 
+@SuppressWarnings("unused")
 public class Deque implements ForcedImplementation {
 
 	private DequeNode front, rear;
