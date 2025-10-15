@@ -1,0 +1,12 @@
+[package]
+name = "test"
+version = "0.1.0"
+description = "An example generated using the hello-world template"
+authors = ["treeofmapple <samuelsantana778@gmail.com>"]
+license = "MIT"
+edition = "2024"
+
+[dependencies]
+color-eyre = "0.6.3"
+crossterm = "0.28.1"
+ratatui = "0.29.0"
