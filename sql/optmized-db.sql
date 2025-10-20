@@ -1,3 +1,5 @@
+
+
 CREATE TABLE IF NOT EXISTS empresas (
     id BIGINT NOT NULL,
     nome VARCHAR(255) NOT NULL,

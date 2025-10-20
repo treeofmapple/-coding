@@ -1,3 +1,4 @@
 cargo new my_project
 cargo new my_library --lib
 
+rustup default stable-x86_64-pc-windows-msvc
