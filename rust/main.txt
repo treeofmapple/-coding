@@ -94,5 +94,3 @@ Write a for loop to iterate over the elements in the vector and print each one.
 Concepts: Vec<T>, .new(), .push(), iterating over a collection.
 
 Start with these, and don't be afraid to experiment and look at the compiler errors—they are very helpful in Rust. Good luck!
-
-
