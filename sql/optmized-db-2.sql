@@ -53,8 +53,6 @@ CREATE TABLE IF NOT EXISTS doencas {
     primeira_ocorrencia DATE,
 }
 
-TYPE tipo_exame
-
 CREATE TABLE IF NOT EXISTS consultas (
     id BIGINT NOT NULL,
     id_funcionario BIGINT NOT NULL,
@@ -64,23 +62,43 @@ CREATE TABLE IF NOT EXISTS consultas (
     data_hora_exame DATETIME,
     observations TEXT,
     result VARCHAR(100),
+    risco true or false,
     status VARCHAR(100)
 );
 
-CREATE TABLE Risco_Ocupacional (
+CREATE TABLE risco_ocupacional (
     id BIGINT NOT NULL,
     descricao VARCHAR(150) NOT NULL,
     categoria VARCHAR(100)
 );
 
-CREATE TABLE Exame_Risco (
-    id BIGINT NOT NULL,
-    id_risco BIGINT NOT NULL,
-);
-
 \echo 'Step 2: Starting data import...'
 \timing on
 \echo 'Importing empresas...'
+
+COPY empresas()
+FROM '/docker-entrypoint-initdb.d/empresas.csv'
+WITH (FORMAT csv, HEADER true);
+
+COPY funcionario()
+FROM '/docker-entrypoint-initdb.d/empresas.csv'
+WITH (FORMAT csv, HEADER true);
+
+COPY empresas()
+FROM '/docker-entrypoint-initdb.d/empresas.csv'
+WITH (FORMAT csv, HEADER true);
+
+COPY empresas()
+FROM '/docker-entrypoint-initdb.d/empresas.csv'
+WITH (FORMAT csv, HEADER true);
+
+COPY empresas()
+FROM '/docker-entrypoint-initdb.d/empresas.csv'
+WITH (FORMAT csv, HEADER true);
+
+COPY empresas()
+FROM '/docker-entrypoint-initdb.d/empresas.csv'
+WITH (FORMAT csv, HEADER true);
 
 
 
@@ -88,9 +106,6 @@ CREATE TABLE Exame_Risco (
 \echo 'All data imported successfully.'
 \echo 'Step 3: Adding primary keys, unique constraints, and foreign keys...'
 
-PRIMARY KEY (id_exame, id_risco),
-FOREIGN KEY (id_exame) REFERENCES Exame(id_exame),
-FOREIGN KEY (id_risco) REFERENCES Risco_Ocupacional(id_risco)
 
 
 ALTER TABLE empresas ADD PRIMARY KEY (id_empresa);

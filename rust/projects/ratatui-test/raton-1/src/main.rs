@@ -1,3 +1,20 @@
+use std::io::{self, Result, stdout};
+use std::time::{Duration, Instant};
+
+use crossterm::{
+    event::{self, Event, KeyCode, KeyModifiers},
+    execute,
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
+};
+
+use ratatui::{
+    Frame, Terminal,
+    prelude::*,
+    style::{Color, Modifier, Style},
+    text::Text,
+    widgets::{Block, BorderType, Borders, Paragraph},
+};
+
 #[derive(Debug, Default)]
 struct App {
     should_quit: bool,
@@ -40,10 +57,14 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App)
     loop {
         terminal.draw(|f| ui(f, app))?;
 
-        let timeout = tick_rate.checked_sub(last_tick.elapsed()).unwrap_or_else(|| Duration::from_secs(0));
+        let timeout = tick_rate
+            .checked_sub(last_tick.elapsed())
+            .unwrap_or_else(|| Duration::from_secs(0));
         if crossterm::event::poll(timeout)? {
             if let Event::Key(key) = event::read()? {
-                if key.code == KeyCode::Char('q') || (key.code == KeyCode::Char('c') && key.modifiers == KeyModifiers::CONTROL) {
+                if key.code == KeyCode::Char('q')
+                    || (key.code == KeyCode::Char('c') && key.modifiers == KeyModifiers::CONTROL)
+                {
                     app.should_quit = true;
                 }
             }
@@ -79,17 +100,26 @@ fn ui(f: &mut Frame, _app: &App) {
 
     f.render_widget(block, main_layout[1]);
 
-
-    let inner_area = main_layout[1].inner(&Block::default().padding(ratatui::widgets::Padding::uniform(1)));
+    let inner_area = Block::default()
+        .borders(Borders::ALL)
+        .style(Style::default().fg(Color::White))
+        .title("Ratatui Minimal Example")
+        .title_alignment(Alignment::Center)
+        .border_type(BorderType::Rounded)
+        .inner(main_layout[1]);
 
     let content = Text::from(vec![
-        "Welcome to the Rust Ratatui Interface!",
-        "",
-        "Press 'q' or Ctrl+C to quit.",
+        Line::from("Welcome to the Rust Ratatui Interface!"),
+        Line::from(""),
+        Line::from("Press 'q' or Ctrl+C to quit."),
     ]);
 
     let paragraph = Paragraph::new(content)
-        .style(Style::default().fg(Color::Cyan).add_modifier(Modifier::BOLD))
+        .style(
+            Style::default()
+                .fg(Color::Cyan)
+                .add_modifier(Modifier::BOLD),
+        )
         .alignment(Alignment::Center);
 
     f.render_widget(paragraph, inner_area);
@@ -97,7 +127,11 @@ fn ui(f: &mut Frame, _app: &App) {
     let help_text = Paragraph::new("Status: Running | Controls: q/Ctrl+C (Quit)")
         .style(Style::default().fg(Color::DarkGray))
         .alignment(Alignment::Left)
-        .block(Block::default().borders(Borders::TOP).border_type(BorderType::Plain));
+        .block(
+            Block::default()
+                .borders(Borders::TOP)
+                .border_type(BorderType::Plain),
+        );
 
     f.render_widget(help_text, main_layout[2]);
 }
