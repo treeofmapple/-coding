@@ -112,3 +112,4 @@
 **bin/
 /rust/rustlings
 *.onnx
+*.csv

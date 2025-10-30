@@ -8,7 +8,7 @@ fn main() {
     let size: usize = 1024 * 1024 * 1024;
     let layout = Layout::from_size_align(size, 1).unwrap();
     let threadsleeptime = 10;
-    
+
     unsafe {
         let ptr = alloc(layout);
         if ptr.is_null() {
@@ -16,10 +16,10 @@ fn main() {
         }
 
         println!("Allocated {} MB successfully. Waiting for memory fill.", size);
-        
+
         let buffer: &mut [u8] = slice::from_raw_parts_mut(ptr, size);
         buffer.fill(0);
-        
+
         println!("Memory committed. Holding for {} seconds...", threadsleeptime);
         thread::sleep(Duration::from_secs(threadsleeptime));
 
@@ -27,5 +27,5 @@ fn main() {
         dealloc(ptr, layout);
     }
 
-    
+
 }
