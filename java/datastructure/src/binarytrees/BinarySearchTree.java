@@ -6,7 +6,7 @@ public class BinarySearchTree {
 
 	private BinaryNode root;
 
-	class BinaryNode {
+		class BinaryNode {
 		private int element;
 		private BinaryNode left;
 		private BinaryNode right;
