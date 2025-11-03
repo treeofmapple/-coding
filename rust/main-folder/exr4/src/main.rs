@@ -1,7 +1,7 @@
 fn if_negative(value: i64) {
     if (value >= 1) {
         println!("Positivo");
-    } else if (value <= -1) {
+    } else if value <= -1 {
         println!("Negativo");
     } else {
         println!("Zero");
