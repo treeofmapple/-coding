@@ -1,9 +1,19 @@
-pub fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App) -> Result<()> {
+use std::{
+    io,
+    time::{Duration, Instant},
+};
+
+use crossterm::event::{self, Event, KeyCode, KeyModifiers};
+use ratatui::{Terminal, prelude::CrosstermBackend};
+
+use crate::{structs::AppFunctions, terminal::my_ui};
+
+pub fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut AppFunctions) -> io::Result<()> {
     let tick_rate = Duration::from_millis(250);
     let mut last_tick = Instant::now();
 
     loop {
-        terminal.draw(|f| ui(f, app))?;
+        terminal.draw(|f| my_ui(f, app))?;
 
         let timeout = tick_rate
             .checked_sub(last_tick.elapsed())

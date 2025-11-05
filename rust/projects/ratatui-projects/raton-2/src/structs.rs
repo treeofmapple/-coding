@@ -1,4 +1,4 @@
 #[derive(Debug, Default)]
-pub struct App {
+pub struct AppFunctions {
     pub should_quit: bool,
 }

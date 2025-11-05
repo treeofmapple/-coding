@@ -1,8 +1,19 @@
-use std::{io::{self, Result, stdout}};
-use crossterm::{execute, terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode}};
-use ratatui::{Frame, Terminal, layout::{Alignment, Constraint, Direction, Layout}, prelude::CrosstermBackend, style::{Color, Style}, text::Text, widgets::{Block, BorderType, Borders}};
+use crossterm::{
+    execute,
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
+};
+use ratatui::{
+    Frame, Terminal,
+    layout::{Alignment, Constraint, Direction, Layout},
+    prelude::CrosstermBackend,
+    style::{Color, Modifier, Style},
+    text::{Line, Text},
+    widgets::{Block, BorderType, Borders, Paragraph},
+};
+use std::io::{self, Result, stdout};
 
-use crate::structs::App;
+use crate::structs::AppFunctions;
+
 
 pub fn setup_terminal() -> Result<Terminal<CrosstermBackend<io::Stdout>>> {
     enable_raw_mode()?;
@@ -18,8 +29,7 @@ pub fn restore_terminal() -> Result<()> {
     Ok(())
 }
 
-
-pub fn ui(f: &mut Frame, _app: &App) {
+pub fn my_ui(f: &mut Frame, _app: &AppFunctions) {
     let main_layout = Layout::new(
         Direction::Vertical,
         [
