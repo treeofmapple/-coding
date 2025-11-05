@@ -1,4 +1,6 @@
-# dotenv environment variable files
+# =========================
+# Environment files
+# =========================
 **/.env
 **/.env.development.local
 **/.env.test.local
@@ -6,53 +8,83 @@
 **/.env.local
 **/certs
 
-# Compiled output
-**/dist
-**/tmp
-**/out-tsc
-**/bazel-out
-**/*.lock
-
-# Node
+# =========================
+# Node.js & package management
+# =========================
 **/node_modules
 **/npm-debug.log
 **/yarn-error.log
+**/package-lock.json
+*.lock
+**/cargo.lock
 
-# Miscellaneous
-**/.angular/cache
-**/.sass-cache/
-**/connect.lock
-**/coverage
-**/libpeerconnection.log
-**/testem.log
-**/typings
-
-# System files
-**/.DS_Store
-**/Thumbs.db
-
-# code coverage
-**/coverage
-**/*.lcov
-
-# logs
-**/logs
-**/_.log
-**/report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
-
-# output
-**/out
+# =========================
+# Build / compiled output
+# =========================
 **/dist
+**/out
+**/out-tsc
+**/tmp
+**/bazel-out
 **/*.tgz
+**/bin
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-**/HELP.md
+# Maven / Java build
 **/target/
 **/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+**/pom.properties
+**/maven-wrapper.properties
 
+# =========================
+# Logs and reports
+# =========================
+**/logs
+**/_.log
+**/report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+**/libpeerconnection.log
+**/testem.log
+
+# =========================
+# Code coverage
+# =========================
+**/coverage
+**/*.lcov
+
+# =========================
+# Caches
+# =========================
+**/.cache
+**/.eslintcache
+**/*.tsbuildinfo
+**/.angular/cache
+**/.sass-cache/
+
+# =========================
 # IDEs and editors
+# =========================
+
+## IntelliJ / STS ##
 **/.idea/
+**/*.iws
+**/*.iml
+**/*.ipr
+**/.apt_generated
+**/.factorypath
+**/.springBeans
+**/.sts4-cache
+
+## NetBeans ##
+**/nbproject/private/
+**/nbbuild/
+**/nbdist/
+**/.nb-gradle/
+
+## Eclipse / generic ##
 **/.project
 **/.classpath
 **/.c9/
@@ -60,56 +92,24 @@
 **/.settings/
 **/*.sublime-workspace
 
-### STS ###
-**/.apt_generated
-**/.classpath
-**/.factorypath
-**/.project
-**/.settings
-**/.springBeans
-**/.sts4-cache
-
-### IntelliJ IDEA ###
-**/.idea
-**/*.iws
-**/*.iml
-**/*.ipr
-
-### NetBeans ###
-**/nbproject/private/
-**/nbbuild/
-**/dist/
-**/nbdist/
-**/.nb-gradle/
-**/build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-**/.vscode/
-**/.vscode/*
+## VS Code ##
 **/.vs
+**/.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
 
-# Finder (MacOS) folder config
+# =========================
+# System files
+# =========================
 **/.DS_Store
+**/Thumbs.db
 
-# caches
-**/.eslintcache
-**/.cache
-**/*.tsbuildinfo
-**/cargo.lock
-*.lock
+# =========================
+# Miscellaneous
+# =========================
+**/HELP.md
 **/.class
 *.class
-**/pom.properties
-
-**/bin/
-**bin/
-/rust/rustlings
-*.onnx
-*.csv
