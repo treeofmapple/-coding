@@ -1,6 +1,6 @@
 use std::io::{self, Read, Write};
 
-use crate::connection::tcp::TcpServerConnection;
+use crate::{connection::tcp::TcpServerConnection, http::server::ServerError};
 
 struct TestStream {
     input_data: Vec<u8>,

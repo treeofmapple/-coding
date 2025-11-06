@@ -1,9 +1,9 @@
 use std::{
-    io::{Read, Write},
+    io::{self, Read, Write},
     net::{SocketAddr, TcpListener},
 };
 
-use crate::thread::pool::ThreadPool;
+use crate::{http::server::{Connection, ServerError}, thread::pool::ThreadPool};
 
 mod tests;
 

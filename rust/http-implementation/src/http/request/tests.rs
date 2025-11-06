@@ -1,3 +1,5 @@
+use std::str::FromStr;
+
 use crate::http::request::{HttpMethod, HttpRequestLine, HttpVersion};
 
 #[test]
