@@ -114,3 +114,6 @@
 **/.class
 *.class
 *.csv
+**/.pyc
+*.pyc
+*__pycache__
