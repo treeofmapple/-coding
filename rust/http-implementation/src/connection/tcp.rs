@@ -3,8 +3,13 @@ use std::{
     net::{SocketAddr, TcpListener},
 };
 
-use crate::{http::server::{Connection, ServerError}, thread::pool::ThreadPool};
+use crate::{
+    http::server::{Connection, ServerError},
+    thread::pool::ThreadPool,
+};
 
+
+#[cfg(test)]
 mod tests;
 
 pub struct TcpServerConnection {
@@ -57,7 +62,7 @@ impl Connection for TcpServerConnection {
             match connection {
                 Ok(mut socket) => {
                     self.pool.execute(move || {
-                        Self::handle_incoming_connection(&request_handler_callback)
+                        Self::handle_incoming_connection(request_handler_callback, &mut socket)
                     });
                 }
                 Err(e) => println!("Error when getting client: {:?}", e),

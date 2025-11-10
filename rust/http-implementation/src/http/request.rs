@@ -2,6 +2,7 @@ use std::{fmt, str::FromStr};
 
 use regex::Regex;
 
+#[cfg(test)]
 mod tests;
 
 pub struct HttpRequest {

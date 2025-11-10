@@ -2,7 +2,7 @@ use crate::http::content::{find_mimetype, load_content_from_uri};
 
 #[test]
 fn test_load_existing_file() {
-    let uri = "example/hello.html";
+    let uri = "content/hello.html";
 
     let result = load_content_from_uri(&uri);
 

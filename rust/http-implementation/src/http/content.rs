@@ -2,6 +2,7 @@ use std::{fs, io, path::Path};
 
 use mime::Mime;
 
+#[cfg(test)]
 mod tests;
 
 pub type Message = Vec<u8>;

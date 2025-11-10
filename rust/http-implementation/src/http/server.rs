@@ -7,6 +7,7 @@ use crate::http::{
     request::{HttpMethod, HttpRequest},
 };
 
+#[cfg(test)]
 mod tests;
 
 #[derive(Debug, Clone)]
@@ -114,10 +115,7 @@ impl<T: Connection> Server<T> {
     }
 
     fn build_not_implemented_response() -> Message {
-        format!(
-            "{}\r\n",
-        )
-            Self::build_http_response(501).unwrap().into_bytes()
+        format!("{}\r\n", Self::build_http_response(501).unwrap()).into_bytes()
     }
 
     fn build_http_response(status_code: u16) -> Result<String, ServerError> {
