@@ -117,3 +117,9 @@
 **/.pyc
 *.pyc
 *__pycache__
+*.mp3
+*.mp4
+*.part
+*.ytdl
+/python/video-downloader/video-downloader
+*cookies.txt
