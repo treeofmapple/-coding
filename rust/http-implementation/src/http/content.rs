@@ -12,9 +12,9 @@ pub fn load_content_from_uri(uri: &str) -> Result<Message, io::Error> {
     let path = Path::new(uri);
     fs::read(path)
 }
+
 pub fn find_mimetype(filename: &str) -> Mime {
     let parts: Vec<&str> = filename.split(".").collect();
-
     let result = match parts.last() {
         Some(v) => match *v {
             "html" => mime::TEXT_HTML,
@@ -25,7 +25,6 @@ pub fn find_mimetype(filename: &str) -> Mime {
         },
         None => mime::TEXT_PLAIN,
     };
-
     result
 }
 
