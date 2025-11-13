@@ -67,9 +67,9 @@ impl<T: Connection> Server<T> {
                 |_| Ok(Self::build_not_implemented_response()),
                 |http_request| match http_request.line.method {
                     HttpMethod::Get => Self::handle_get_request(&http_request),
-                    HttpMethod::Post => todo!(),
-                    HttpMethod::Put => todo!(),
-                    HttpMethod::Delete => todo!(),
+                    HttpMethod::Post => Self::handle_post_request(&http_request),
+                    HttpMethod::Put => Self::handle_put_request(&http_request),
+                    HttpMethod::Delete => Self::handle_delete_request(&http_request),
                 },
             )
     }
@@ -89,6 +89,36 @@ impl<T: Connection> Server<T> {
                 message.extend_from_slice(blank_line.as_bytes());
                 message.extend_from_slice(&content);
                 Ok(message)
+            },
+        )
+    }
+
+    fn handle_post_request(request: &HttpRequest) -> Result<Message, ServerError> {
+        let mime = find_mimetype(&request.line.uri[1..]);
+        load_content_from_uri(&request.line.uri[1..]).map_or_else(
+            |_| Ok(Self::build_not_found_response()),
+            |content| {
+                Ok(content)
+            },
+        )
+    }
+
+    fn handle_put_request(request: &HttpRequest) -> Result<Message, ServerError> {
+        let mime = find_mimetype(&request.line.uri[1..]);
+        load_content_from_uri(&request.line.uri[1..]).map_or_else(
+            |_| Ok(Self::build_not_found_response()),
+            |content| {
+                Ok(content)
+            },
+        )
+    }
+
+    fn handle_delete_request(request: &HttpRequest) -> Result<Message, ServerError> {
+        let mime = find_mimetype(&request.line.uri[1..]);
+        load_content_from_uri(&request.line.uri[1..]).map_or_else(
+            |_| Ok(Self::build_not_found_response()),
+            |content| {
+                Ok(content)
             },
         )
     }
