@@ -12,13 +12,7 @@ google-auth = "0.10"
 
 [profile.release]
 strip = true
-opt-level = '3'
-# 0 = Default
-# 1 = Basic
-# 2 = More Optimized
-# 3 = Best runtime performance
-# s = is for binary size
-# z = aggressive resize for binary size
+opt-level = 3
 
 lto = true
 codegen-units = 1
