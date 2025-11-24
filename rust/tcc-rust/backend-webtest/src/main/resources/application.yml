@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: console, telemetry, mail, ${PROFILE:test}
+  application:
+    name: backend-service_vul
+
+server:
+  port: ${BACKEND_PORT:8000}
+  forward-headers-strategy: framework

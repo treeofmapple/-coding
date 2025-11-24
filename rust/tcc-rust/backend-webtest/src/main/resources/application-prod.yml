@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_DATABASE:example}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      max-lifetime: 1800000 # 30 minutes (in ms)
+      idle-timeout: 600000 # 10 minutes (should be less than maxLifetime)
+      connection-timeout: 30000 # 30 seconds
+      minimum-idle: 5
+      maximum-pool-size: 20
+      pool-name: "ProdDBPool"
+  jpa:
+    open-in-view: false 
+    hibernate:
+      ddl-auto: update
+
+  mail:
+    enable: ${MAIL_ENABLE}
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+      
+application:
+  security:
+    secret-key: ${SECURITY_KEY}
+    expiration: ${EXPIRATION_KEY:15m}
+    refresh-token: ${REFRESH_KEY:7d}
+    cookie-name: _adaptative_stored_int
+    login:
+      attempts: ${LOGIN_ATTEMPTS:8}
+  page:
+    size: ${PAGE_SIZE:10}
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS}
+    time: ${CORS_TIME:3600}
+  front:
+    csrf: ${CSRF_ENABLED:true}
+  login:
+    max:
+      attempts: ${LOGIN_ATTEMPTS:5}
+    user:
+      creation: ${CREATION_LIMIT:3}
+  rate:
+    limit: ${RATE_LIMIT:20}
+    refil:
+      time: ${REFIL_TIME:30s}
+      
+settings:
+  security:
+    generated:
+      user: ${ADMIN_USER}
+      email: ${ADMIN_EMAIL}
+      password: ${ADMIN_PASSWORD}
+
+
