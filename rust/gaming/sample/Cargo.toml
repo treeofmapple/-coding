@@ -1,0 +1,12 @@
+[package]
+name = "sample"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+wgpu = "0.20"
+winit = "0.29"
+pollster = "0.3"
+glam = "0.27"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+bytemuck = { version = "1.16", features = ["derive"] }
