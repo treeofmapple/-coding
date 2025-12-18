@@ -1,22 +1,20 @@
-from win10toast import ToastNotifier
-import videoDownloader as vd
+import ctypes
+import os
+import subprocess
+import sys
+
+from plyer import notification
+
 import musicDownloader as ms
-import os, sys, ctypes, subprocess
+import videoDownloader as vd
 
 OPTION = ""
 URL = ""
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'downloads')
 os.makedirs(OUTPUT_DIR, exist_ok= True)
 
-if sys.platform.startswith("win"):
-    toaster = ToastNotifier()
-
 def notify_user(message):
-    if(sys.platform.startswith("win")):
-        toaster.show_toast("YouTube Downloader", message, duration=5)
-        hwnd = ctypes.windll.kernel32.GetConsoleWindow()
-        if hwnd:
-            ctypes.windll.user32.FlashWindow(ctypes.windll.kernel32.GetConsoleWindow(), True)
+    notification.notify(title="YouTube Downloader", message=message, timeout=5)
 
 def open_new_instance(option, url):
     subprocess.Popen([sys.executable, __file__, option, url])
