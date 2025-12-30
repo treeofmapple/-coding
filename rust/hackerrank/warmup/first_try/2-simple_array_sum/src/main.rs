@@ -11,9 +11,18 @@ fn main() {
     let stdout = io::stdout();
     let mut fptr = stdout.lock(); // File::create(env::var("OUTPUT_PATH").unwrap()).unwrap();
 
-    stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+    stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
+        .trim()
+        .parse::<i32>()
+        .unwrap();
 
-    let ar: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+    let ar: Vec<i32> = stdin_iterator
+        .next()
+        .unwrap()
+        .unwrap()
         .trim_end()
         .split(' ')
         .map(|s| s.to_string().parse::<i32>().unwrap())
