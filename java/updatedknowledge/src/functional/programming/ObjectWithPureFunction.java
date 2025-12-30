@@ -1,4 +1,4 @@
-package funcional.programming;
+package functional.programming;
 
 public class ObjectWithPureFunction {
 
