@@ -1,0 +1,25 @@
+[tools]
+uv = "latest"
+python = "3"
+
+[tasks.init]
+description = "Start Venv Environment"
+run = "if [! -f pyproject.toml ]; then uv init; fi"
+
+[tasks.run]
+description = "Run Application"
+run = "uv run main.py"
+
+[tasks.export]
+description = "Export libraries"
+run = "uv pip freeze > requirements.txt"
+
+[tasks.add]
+hide = true
+description = "Add new library to environment"
+run = "uv add"
+
+[tasks.remove]
+hide = true
+description = "Remove a library from environment"
+run = "uv remove"

@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "d2542263-0f0e-4f02-b411-64d8261de389",
+		"name": "Vehicle API Python",
+		"description": "Collection for Vehicle API with editable base URL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38340143"
+	},
+	"item": [
+		{
+			"name": "Search Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/vehicle/search",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"vehicle",
+						"search"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "plate",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "brand",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "model",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Vehicle by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/vehicle/{{vehicleId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"vehicle",
+						"{{vehicleId}}"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"plate\": \"AB3414\",\n  \"brand\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"type\": \"CAR\",\n  \"color\": \"Black\"\n}\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/vehicle",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Vehicle",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"plate\": \"XYZ9876\",\n  \"color\": \"Red\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/vehicle/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"vehicle",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Vehicle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/vehicle/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"vehicle",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
