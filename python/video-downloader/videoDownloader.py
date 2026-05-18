@@ -7,9 +7,11 @@ def download_video(url, output_path):
         "ignoreerrors": True,
         "sleep_interval": 10,
         "max_sleep_interval": 30,
+        "download_archive": "downloaded_songs.txt",
         "outtmpl": f"{output_path}/%(title)s.%(ext)s",
-        "format": "bestvideo+bestaudio/best",
+        "format": "bestvideo*[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
         "merge_output_format": "mp4",
+        "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
     }
 
     with youtube.YoutubeDL(ydl_opts) as ydl:
@@ -22,13 +24,15 @@ def download_playlist(url, output_path):
         "cookiefile": "cookies.txt",
         "ignoreerrors": True,
         "outtmpl": f"{output_path}/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s",
-        "format": "bestvideo+bestaudio/best",
+        "format": "bestvideo*[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
+        "download_archive": "downloaded_songs.txt",
         "merge_output_format": "mp4",
         "noplaylist": False,
         "lazy_playlist": True,
         "sleep_interval": 15,
         "max_sleep_interval": 30,
         "sleep_interval_requests": 2,
+        "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
     }
 
     with youtube.YoutubeDL(ydl_opts) as ydl:
